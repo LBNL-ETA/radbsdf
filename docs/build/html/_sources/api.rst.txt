@@ -1,0 +1,11 @@
+API
+===
+
+Here is the full API reference of all public classes and methods.
+
+TabularBSDF
+-----------
+This is the XML BSDF object
+
+.. autoclass:: TabularBSDF
+   :members:

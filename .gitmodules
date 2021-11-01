@@ -1,0 +1,3 @@
+[submodule "Radiance"]
+	path = Radiance
+	url = https://github.com/LBNL-ETA/Radiance
