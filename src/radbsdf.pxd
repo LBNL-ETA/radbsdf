@@ -140,8 +140,8 @@ cdef extern from '../Radiance/src/common/bsdf.h':
     const SDData* SDcacheFile(const char* fname)
 
     # Free a BSDF from our cache (clear all if sd==NULL) */
-    #void SDfreeCache(const SDData* sd)
-    void SDfreeCache
+    void SDfreeCache(const SDData* sd)
+    # void SDfreeCache
 
     # Query projected solid angle resolution for non-diffuse BSDF direction(s) */
     SDError SDsizeBSDF(double* projSA, const FVECT v1,
