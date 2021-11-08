@@ -21,7 +21,7 @@ if USE_CYTHON:
     bsdf_files = os.path.join(rad_common, "BSDFfiles.txt")
 
     if not os.path.isfile(bsdf_files):
-        raise FileNotFoundError("BSDFfiles.txt not found")
+        raise FileNotFoundError(bsdf_files + " not found")
 
     with open(bsdf_files) as rdr:
         bsdf_file_list = rdr.read().strip().splitlines()
