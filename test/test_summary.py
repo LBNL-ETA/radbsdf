@@ -18,7 +18,7 @@ def vec_from_deg(theta: float, phi: float):
 class TestDirectHemi(unittest.TestCase):
     xml_path = './test_fabric.xml'
     def test_hemispherical_scattering(self):
-        sd_data = radbsdf.BSDF(self.xml_path)
+        sd_data = radbsdf.TabularBSDF(self.xml_path)
         sd_data.get_summary()
         # in = 30
         # pin = 270

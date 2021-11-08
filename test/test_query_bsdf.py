@@ -15,7 +15,7 @@ class TestQuery(unittest.TestCase):
     xml_path = './test_fabric.xml'
 
     def test_query(self):
-        sd_data = radbsdf.BSDF(self.xml_path)
+        sd_data = radbsdf.TabularBSDF(self.xml_path)
         tin = 30
         pin = 270
         tout = 180 - tin

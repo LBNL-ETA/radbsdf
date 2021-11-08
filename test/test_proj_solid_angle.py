@@ -17,7 +17,7 @@ class TestDirectHemi(unittest.TestCase):
     xml_path = './test_fabric.xml'
 
     def test_hemispherical_scattering(self):
-        sd_data = radbsdf.BSDF(self.xml_path)
+        sd_data = radbsdf.TabularBSDF(self.xml_path)
         tin = 0
         pin = 0
         ivec = vec_from_deg(tin, pin)

@@ -167,19 +167,15 @@ cdef class TabularBSDF:
 
         return radbsdf.SDdirectHemi(inv, sflag, self.sdata)
 
-    cpdef sample(self, nsamp, ivec, int sflags):
+    cpdef sample(self, int nsamp, ivec, int sflags):
         # cdef radbsdf.FVECT ioVec
+        cdef list samples = []
         cdef radbsdf.SDValue val
-        cdef array.array iv = array.array('f', ivec)
+        cdef double[3] iv = ivec
 
-
-        # for i in range(radbsdf.SDmaxCh):
-            # iv[i] = iovec[i]
-
-        samples = []
         for i in range(nsamp):
             randx = (i + rand()*(1./(RAND_MAX+.5)))/nsamp
-            err = radbsdf.SDsampBSDF(&val, iv.data.as_doubles, randx, sflags, self.sdata)
+            err = radbsdf.SDsampBSDF(&val, iv, randx, sflags, self.sdata)
             samples.append(iv + list(self.sdvalue2xyz(val)))
 
         return samples
