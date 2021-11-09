@@ -67,10 +67,13 @@ jobs:
         pip install build wheel
         pip install Cython
 
+    - name: Include submodule
+      run: git submodule update --init
+
     - name: Build package
       run: |
-        git submodule update --init
         cd Radiance
+        ls
         git checkout master
         cd ..
         python setup.py bdist_wheel
