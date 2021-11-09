@@ -30,13 +30,14 @@ jobs:
         pip install build wheel
         pip install Cython
 
-    - name: Include stub submodule to base repo
+    - name: Include submodule
       run: git submodule update --init
 
     - name: Build package
       run: |
-        ls
-        pwd
+        cd Radiance
+        git checkout master
+        cd ..
         python setup.py sdist bdsit_wheel
 
     - name: Publish package
