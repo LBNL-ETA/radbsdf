@@ -69,7 +69,7 @@ jobs:
 
     - name: Build package
       run: |
-        ls
+        git submodule update --init
         cd Radiance
         git checkout master
         cd ..
