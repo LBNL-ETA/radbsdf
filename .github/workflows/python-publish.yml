@@ -49,7 +49,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-18.04, windows-2019, macos-10.15]
+        os: [windows-2019, macos-10.15]
 
     steps:
     - uses: actions/checkout@v2
@@ -68,29 +68,17 @@ jobs:
     - name: Include submodule
       run: git submodule update --init
 
-      # - name: Build package
-      # run: |
-      # cd Radiance
-        # git checkout master
-        # cd ..
-        # python setup.py bdist_wheel
-    - name: Set up QEMU
-      if: runner.os == 'Linux'
-      uses: docker/setup-qemu-action@v1
-      with:
-        platforms: arm64
-
-    - uses: joerick/cibuildwheel@v2.2.0
-      env:
-        CIBW_SKIP: 'pp*'
-        CIBW_ARCHS_LINUX: auto aarch64
-        CIBW_ARCHS_MACOS: auto universal2
+    - name: Build package
+      run: |
+        cd Radiance
+        git checkout master
+        cd ..
+        python setup.py bdist_wheel
 
     - name: Upload wheels
       uses: actions/upload-artifact@v2
       with:
-        # path: dist/*.whl
-        path: ./wheelhouse
+        path: dist/*.whl
 
   upload_all:
     needs: [build_wheels, make_sdist]
