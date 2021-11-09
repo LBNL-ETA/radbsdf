@@ -57,7 +57,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.x'
+        python-version: '3.6'
 
     - name: Install dependencies
       run: |
@@ -68,18 +68,29 @@ jobs:
     - name: Include submodule
       run: git submodule update --init
 
-    - name: Build package
-      run: |
-        cd Radiance
-        ls
-        git checkout master
-        cd ..
-        python setup.py bdist_wheel
+      # - name: Build package
+      # run: |
+      # cd Radiance
+        # git checkout master
+        # cd ..
+        # python setup.py bdist_wheel
+    - name: Set up QEMU
+      if: runner.os == 'Linux'
+      uses: docker/setup-qemu-action@v1
+      with:
+        platforms: arm64
+
+    - uses: joerick/cibuildwheel@v2.2.0
+      env:
+        CIBW_SKIP: 'pp*'
+        CIBW_ARCHS_LINUX: auto aarch64
+        CIBW_ARCHS_MACOS: auto universal2
 
     - name: Upload wheels
       uses: actions/upload-artifact@v2
       with:
-        path: dist/*.whl
+        # path: dist/*.whl
+        path: ./wheelhouse
 
   upload_all:
     needs: [build_wheels, make_sdist]
