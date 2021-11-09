@@ -37,7 +37,7 @@ if USE_CYTHON:
 
 setup(
      name='radbsdf',
-     version='0.0.1',
+     version='0.0.2',
      author='LBNL',
      author_email='taoningwang@lbl.gov',
      packages=find_packages(),
