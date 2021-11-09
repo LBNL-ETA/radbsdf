@@ -66,16 +66,19 @@ jobs:
         python -m pip install --upgrade pip
         pip install build wheel
         pip install Cython
+
+    - name: Build package
+      run: |
+        ls
         cd Radiance
         git checkout master
         cd ..
-
-    - uses: pypa/cibuildwheel@v2.0.0
+        python setup.py bdist_wheel
 
     - name: Upload wheels
       uses: actions/upload-artifact@v2
       with:
-        path: wheelhouse/*.whl
+        path: dist/*.whl
 
   upload_all:
     needs: [build_wheels, make_sdist]
