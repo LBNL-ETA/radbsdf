@@ -14,10 +14,27 @@ radbsdf is an Python wrapper for the Radiance BSDF library.
    :maxdepth: 2
    :caption: Contents:
 
+
+Installation
+------------
+
+MacOS and Windows users can install radbsdf through pypi::
+
+   pip install radbsdf
+
+Linux (Ubuntu, CentOS) users need to download/clone the repository, compile, and install locally::
+
+   git clone https://github.com/LBNL-ETA/radbsdf
+   cd radbsdf
+   pip install .
+
+TODO: In order for Linux users to install through pypi, a *manylinux* wheel need to be built.
+
 User Guide
 ----------
 
 A user can use radbsdf to read and analyze BSDF.
+
 
 To load a tabular BSDF (.xml) file:
 
