@@ -13,17 +13,14 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-        with:
-          submodules: 'true'
+
+      - name: Checkout submodule
+      - run: git submodule update --init
 
       - name: Change submodule branch
         run: |
           cd Radiance
-          ls
-          git branch -a
-          git status
-          git pull
-          ls
+          git checkout master
           cd ..
 
       - name: Build wheels
