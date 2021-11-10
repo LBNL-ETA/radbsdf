@@ -5,13 +5,14 @@ Python wrapper of the Radiance BSDF library. Radiance BSDF library is a standalo
 
 ## Installation
 
-For Mac and Windows users, you can then install _radbsdf_ by entering the following command in your terminal/cmd/powershell:
+You can then install _radbsdf_ by entering the following command in your terminal/cmd/powershell:
 
 ```
 pip install radbsdf
 ```
+Currently, Python 3.6-3.9 are supported on MacOS, Windows, and Linux platforms.
 
-For Linux users, you will need to download/clone this repo to your local environment and install locally:
+Alternativelu, you can also download/clone this repo to your local environment and install locally:
 
 ```
 git clone https://github.com/LBNL-ETA/radbsdf.git
