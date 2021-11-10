@@ -1,0 +1,4 @@
+recursive-include Radiance/src/common *.h *.c
+include Radiance/src/common/BSDFfiles.txt
+include src/radbsdf.pyx
+include src/radbsdf.pxd
