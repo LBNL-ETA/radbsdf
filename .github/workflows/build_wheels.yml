@@ -18,8 +18,11 @@ jobs:
 
       - name: Change submodule branch
         run: |
+          ls
           cd Radiance
-          git fetch
+          ls
+          git config --global pager.branch false
+          git branch -a
           git checkout master
           cd ..
 
