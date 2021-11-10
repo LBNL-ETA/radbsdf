@@ -19,6 +19,7 @@ jobs:
       - name: Change submodule branch
         run: |
           cd Radiance
+          git fetch
           git checkout master
           cd ..
 
