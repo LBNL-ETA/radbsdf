@@ -1,5 +1,4 @@
-#from distutils.core import setup
-# from distutils.extension import Extension
+
 from setuptools import find_packages, setup, Extension
 import os
 try:
@@ -26,6 +25,7 @@ if USE_CYTHON:
     with open(bsdf_files) as rdr:
         bsdf_file_list = rdr.read().strip().splitlines()
 
+
     bsdf_source_files = [os.path.join(rad_common, file) for file in bsdf_file_list
                          if file.endswith('.c')]
 
@@ -36,11 +36,15 @@ if USE_CYTHON:
     extensions = cythonize(extensions)
 
 setup(
-     name='radbsdf',
-     version='0.0.2',
-     author='LBNL',
-     author_email='taoningwang@lbl.gov',
-     packages=find_packages(),
-     ext_modules=extensions,
-     zip_safe=False,
+    packages=find_packages(),
+    ext_modules=extensions,
+#     long_description=long_description,
+#     long_description_content_type="text/markdown",
+#     url="https://github.com/LBNL-ETA/radbsdf",
+#     classifiers=[
+#         "Programming Language :: Python :: 3",
+#         "License :: OSI Approved :: BSD License",
+#         "Operating System :: OS Independent",
+#     ],
+    zip_safe=False,
 )
