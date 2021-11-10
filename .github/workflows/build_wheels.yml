@@ -18,12 +18,8 @@ jobs:
 
       - name: Change submodule branch
         run: |
-          ls
-          cd Radiance
-          ls
-          git config --global pager.branch false
           git branch -a
-          git checkout master
+          git status
           cd ..
 
       - name: Build wheels
