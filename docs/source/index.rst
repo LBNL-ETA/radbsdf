@@ -49,7 +49,7 @@ Once the BSDF is loaded, one can check BSDF summary:
 
    sd_data.get_summary()
 
-An summary will be printed out::
+A summary will be printed out::
 
    Materials: VBlinds
    Manufacturer: Manufacturer
@@ -64,7 +64,7 @@ An summary will be printed out::
    Diffuse Back Transmittance: 0.0 0.0 0.0
 
 
-One can further examine direct hemispherical results for a given angle of incidence. Before we do that, we need to transform our coordinate systems to cartesian:
+One can further examine direct hemispherical results for a given angle of incidence. Before we do that, we need to transform our coordinate systems to cartesian. For example, given an incidence theta=30° and phi=270°, we can transform the pair to Cartesian vector, ivec, like so:
 
 .. code-block::
 
@@ -77,7 +77,7 @@ One can further examine direct hemispherical results for a given angle of incide
    z = math.cos(theta)
    ivec = [x, y, z]
 
-Once we have our angle of incidence in cartesian coordinate, we can obtain various hemispherical results like so:
+Once we have our angle of incidence in cartesian coordinate, we can obtain various hemispherical results like so.:
 
 .. code-block::
 
@@ -89,13 +89,13 @@ Once we have our angle of incidence in cartesian coordinate, we can obtain vario
    hemis_specular_reflectance = sd_data.get_direct_hemi(ivec, radbsdf.SFLAGS["Rs"])
    hemis_diffuse_reflectance = sd_data.get_direct_hemi(ivec, radbsdf.SFLAGS["Rd"])
 
-We can also query the BSDFF given a pair of incience and exiting angle. The outgoing angle needs also to be in cartesian coordiate:
+We can also query the BSDF given a pair of incience and exiting angle. The outgoing angle needs also to be in Cartesian coordinate system:
 
 .. code-block::
 
    sd_data.query(ovec, ivec)
 
-In addition, we can also query the projected solid angle for a given angle of incience:
+In addition, we can also query the projected solid angle for a given angle of incidence:
 
 .. code-block::
 
