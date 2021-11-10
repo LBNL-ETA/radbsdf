@@ -1,5 +1,5 @@
 # radbsdf
-Python wrapper of Radiance BSDF library
+Python wrapper of the Radiance BSDF library. Radiance BSDF library is a standalone library that provides functionality for reading and querying tabular BSDF, usually in form of a xml file.
 
 [Documentation](https://readbsdf.readthedocs.io/en/latest/)
 
@@ -8,7 +8,7 @@ Python wrapper of Radiance BSDF library
 For Mac and Windows users, you can then install _radbsdf_ by entering the following command in your terminal/cmd/powershell:
 
 ```
-pip install frads
+pip install radbsdf
 ```
 
 For Linux users, you will need to download/clone this repo to your local environment and install locally:
@@ -17,7 +17,4 @@ For Linux users, you will need to download/clone this repo to your local environ
 git clone https://github.com/LBNL-ETA/radbsdf.git
 cd radbsdf
 pip install .
-
 ```
-
-
