@@ -18,8 +18,12 @@ jobs:
 
       - name: Change submodule branch
         run: |
+          cd Radiance
+          ls
           git branch -a
           git status
+          git pull
+          ls
           cd ..
 
       - name: Build wheels
