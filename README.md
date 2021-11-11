@@ -1,7 +1,7 @@
 # radbsdf
 Python wrapper of the Radiance BSDF library. Radiance BSDF library is a standalone library that provides functionality for reading and querying tabular BSDF, usually in form of a xml file.
 
-[Documentation](https://readbsdf.readthedocs.io/en/latest/)
+[Documentation](https://radbsdf.readthedocs.io/en/latest/)
 
 ## Installation
 
