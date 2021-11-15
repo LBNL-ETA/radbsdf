@@ -1,18 +1,18 @@
 # radbsdf
-Python wrapper of the Radiance BSDF library. Radiance BSDF library is a standalone library that provides functionality for reading and querying tabular BSDF, usually in form of a xml file.
+_radbsdf_ is a Python wrapper of the Radiance BSDF library which provides functionality for reading and querying tabular BSDF, usually in form of a xml file. _radbsdf_ support both Klems and variable resolution tensor tree basis.
 
 [Documentation](https://radbsdf.readthedocs.io/en/latest/)
 
 ## Installation
 
-You can then install _radbsdf_ by entering the following command in your terminal/cmd/powershell:
+You can install _radbsdf_ by entering the following command in your terminal/cmd/powershell:
 
 ```
 pip install radbsdf
 ```
-Currently, Python 3.6-3.9 are supported on MacOS, Windows, and Linux platforms.
+Currently, _radbsdf_ is tested with Python 3.6-3.9 on MacOS, Windows, and various Linux platforms.
 
-Alternativelu, you can also download/clone this repo to your local environment and install locally:
+Alternatively, you can also download/clone this repo to your local environment and install locally:
 
 ```
 git clone https://github.com/LBNL-ETA/radbsdf.git
