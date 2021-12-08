@@ -153,7 +153,7 @@ cdef class TabularBSDF:
             outv[i] = outVec[i]
             inv[i] = inVec[i]
 
-        err = radbsdf.SDevalBSDF(&sv, outv, inv, self.sdata)
+        err = radbsdf.SDevalBSDF(&sv, inv, outv, self.sdata)
         if err:
             radbsdf.SDError[err]
         else:
