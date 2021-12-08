@@ -183,12 +183,34 @@ cdef class TabularBSDF:
     # Query projected solid angle resolution for non-diffuse BSDF direction
     cpdef proj_solid_angle(self, vec1):
         cdef double[2] proja
-        cdef array.array v1 = array.array('f', vec1)
+        cdef radbsdf.FVECT inv
+
+        for i in range(radbsdf.SDmaxCh):
+            inv[i] = vec1[i]
 
         # forcing min max query
         qflags = radbsdf.SDqueryMin + radbsdf.SDqueryMax
 
-        err = radbsdf.SDsizeBSDF(proja, v1.data.as_doubles, NULL, qflags, self.sdata)
+        err = radbsdf.SDsizeBSDF(proja, inv, NULL, qflags, self.sdata)
+        if err:
+            radbsdf.SDError[err]
+        else:
+            return proja
+
+    # Query projected solid angle resolution for non-diffuse BSDF direction
+    cpdef proj_solid_angle2(self, vout, vin):
+        cdef double[2] proja
+        cdef radbsdf.FVECT inv1
+        cdef radbsdf.RREAL[3] inv2
+
+        for i in range(radbsdf.SDmaxCh):
+            inv1[i] = vout[i]
+            inv2[i] = vin[i]
+
+        # forcing min max query
+        qflags = radbsdf.SDqueryMin + radbsdf.SDqueryMax
+
+        err = radbsdf.SDsizeBSDF(proja, inv1, inv2, qflags, self.sdata)
         if err:
             radbsdf.SDError[err]
         else:
