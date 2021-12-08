@@ -38,13 +38,5 @@ if USE_CYTHON:
 setup(
     packages=find_packages(),
     ext_modules=extensions,
-#     long_description=long_description,
-#     long_description_content_type="text/markdown",
-#     url="https://github.com/LBNL-ETA/radbsdf",
-#     classifiers=[
-#         "Programming Language :: Python :: 3",
-#         "License :: OSI Approved :: BSD License",
-#         "Operating System :: OS Independent",
-#     ],
     zip_safe=False,
 )
