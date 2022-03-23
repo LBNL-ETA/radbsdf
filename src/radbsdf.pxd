@@ -8,7 +8,7 @@ cdef extern from "limits.h":
 cdef extern int rand()
 cdef extern printf()
 
-cdef extern from '../Radiance/src/common/bsdf.h':
+cdef extern from "../Radiance/src/common/bsdf.h":
 
     # maximum # spectral channels
     const int SDmaxCh
