@@ -24,7 +24,7 @@ class TestQuery(unittest.TestCase):
         ivec = vec_from_deg(tin, pin)
         ovec = vec_from_deg(tout, pout)
         res = sd_data.query(ovec, ivec)
-        self.assertAlmostEqual(res[1], 7.07400, places=3)
+        self.assertAlmostEqual(res[1], 7.07500, places=3)
         tin = 30
         pin = 270
         tout = 180 - tin
@@ -43,7 +43,7 @@ class TestQuery(unittest.TestCase):
         ivec = vec_from_deg(tin, pin)
         ovec = vec_from_deg(tout, pout)
         res = sd_data.query(ovec, ivec)
-        self.assertAlmostEqual(res[1], 3.465e+01, places=3)
+        self.assertAlmostEqual(res[1], 3.46515e+01, places=3)
         tin = 30
         pin = 270
         tout = 180 - tin
