@@ -32,7 +32,7 @@ class TestQuery(unittest.TestCase):
         ivec = vec_from_deg(tin, pin)
         ovec = vec_from_deg(tout, pout)
         res = sd_data.query(ovec, ivec)
-        self.assertAlmostEqual(res[1], 3.622, places=3)
+        self.assertAlmostEqual(res[1], 3.6226, places=3)
 
     def test_query_kf(self):
         sd_data = radbsdf.TabularBSDF(self.kf_xml_path)
@@ -51,7 +51,7 @@ class TestQuery(unittest.TestCase):
         ivec = vec_from_deg(tin, pin)
         ovec = vec_from_deg(tout, pout)
         res = sd_data.query(ovec, ivec)
-        self.assertAlmostEqual(res[1], 1.427e+01, places=5)
+        self.assertAlmostEqual(res[1], 1.42698e+01, places=3)
 
 if __name__ == "__main__":
     unittest.main()
