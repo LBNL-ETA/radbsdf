@@ -1,3 +1,4 @@
+**Note: radbsdf is no longer maintained, full feature and future development available at [pyradiance](https://github.com/LBNL-ETA/pyradiance)**
 # radbsdf
 _radbsdf_ is a Python wrapper of the Radiance BSDF library which provides functionality for reading and querying tabular BSDF, usually in form of a xml file. _radbsdf_ support both Klems and variable resolution tensor tree basis.
 
